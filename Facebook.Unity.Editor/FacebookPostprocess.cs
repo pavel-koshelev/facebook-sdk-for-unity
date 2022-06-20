@@ -104,6 +104,7 @@ namespace Facebook.Unity.Editor
             facebookParser.UpdateFBSettings(
                 appId,
                 FacebookSettings.IosURLSuffix,
+                FacebookSettings.ClientToken,
                 FacebookSettings.AppLinkSchemes[FacebookSettings.SelectedAppIndex].Schemes);
             facebookParser.WriteToFile();
         }
