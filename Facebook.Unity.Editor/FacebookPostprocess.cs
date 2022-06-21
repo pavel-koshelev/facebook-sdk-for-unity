@@ -92,6 +92,7 @@ namespace Facebook.Unity.Editor
         {
             const string FileName = "Info.plist";
             string appId = FacebookSettings.AppId;
+            string clientToken = FacebookSettings.ClientToken;
             string fullPath = Path.Combine(path, FileName);
 
             if (string.IsNullOrEmpty(appId) || appId.Equals("0"))
@@ -103,8 +104,8 @@ namespace Facebook.Unity.Editor
             var facebookParser = new PListParser(fullPath);
             facebookParser.UpdateFBSettings(
                 appId,
+                clientToken,
                 FacebookSettings.IosURLSuffix,
-                FacebookSettings.ClientToken,
                 FacebookSettings.AppLinkSchemes[FacebookSettings.SelectedAppIndex].Schemes);
             facebookParser.WriteToFile();
         }
